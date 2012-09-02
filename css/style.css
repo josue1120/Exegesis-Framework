@@ -5,14 +5,12 @@
 	|E|
 	+-+
 
-	Exegesis Framework by Timothy Long
+	Exegesis Framework by Timothy Long (@timothylong)
 
 
 */
 
-
 	@import url(reset.css);
-
 
 /*
 
@@ -20,108 +18,77 @@
 	
 */
 
-html,body {
-	margin:0;
-	padding:0;
-}
-
 body {
-	background:#111;
-	font-family:"Lora", serif;
-	font-size:14px;
-	line-height:24px;
-	color:#eee;
+	background:#fff;
+	font: 14px/24px Helvetica Neue,Helvetica,Arial,sans-serif;
+	color:#ddd;
 	text-align:center;
-	-webkit-font-smoothing: antialiased;
-	-webkit-text-size-adjust: 100%;
+	-webkit-font-smoothing:antialiased;
+	-webkit-text-size-adjust:100%;
 }
-
+* {
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+	-webkit-transition:all 0.3s ease;
+	-moz-transition:all 0.3s ease;
+	-o-transition:all 0.3s ease;
+	-ms-transition:all 0.3s ease;
+	transition:all 0.3s ease;
+}
 h1,h2,h3,h4,h5,h6 {
-	font-weight:normal;
+	font-weight:bold;
 	line-height:32px;
-	margin: 0 0 8px;
+	margin:0 0 8px;
 }
-
 h1 {
 	font-size:32px;
 }
-
 h2 {
 	font-size:24px;
 }
-
 h3 {
 	font-size:20px;
 }
-
 h4 {
 	font-size:18px;
 }
-
 h5,h6 {
 	font-size:16px;
 }
-
 a,a:visited {
 	color:#a6a6a6;
 	text-decoration:none;
-	-webkit-transition:color 0.15s ease-out;
-	-moz-transition:color 0.15s ease-out;
 }
-
 a:hover {
 	color:#d9d9d9;
 }
-
 a:focus {
-	outline:thin dotted;
+	outline:none;
 }
-
 a:hover,a:active {
-	outline: 0;
+	outline:0;
 }
-
 p,ul,ol {
 	margin:0 0 20px;
 }
-
 ul,ol {
 	padding:0;
 }
-
 ul ul,ul ol,ol ol,ol ul {
 	margin:0;
 }
-
 li {
 	display:list-item;
 	list-style-position:outside;
 	margin:0 0 0 2em;
 	padding:0;
 }
-
 em {
 	font-style:italic;
 }
-
 img {
-	border:none;
-}
-
-nav {
-	margin:25px 0 0;
-}
-
-nav ul {
-	list-style:none;
-}
-
-nav ul li {
-	display:inline;
-	font-size:16px;
-	-webkit-transition:background-gridor .15s ease-out;
-	-moz-transition:background-gridor .15s ease-out;
-	margin:0 25px 0 0;
+	border: none;
 }
 
 
@@ -140,39 +107,32 @@ nav ul li {
 	position:relative;
 	margin:0 auto;
 }
-
 header {
 	position:relative;
 	margin:100px 0;
 }
-
-#full {
-	position:relative;
-	margin:0 0 50px;
+.grid img {
+	width:100%;
+	height:auto;
 }
-
-#content {
-	clear:both;
+nav {
+	margin:20px 0 0;
 }
-
-#primary,aside {
-	float:left;
+nav ul {
+	list-style:none;
+	line-height:1;
+}
+nav ul li {
 	display:inline;
+	font-size:16px;
+	-webkit-transition:background-gridor .15s ease-out;
+	-moz-transition:background-gridor .15s ease-out;
+	margin:0 25px 0 0;
 }
-
-#primary {
-	width:600px;
-}
-
-aside {
-	width:220px;
-	margin-left:40px;
-}
-
 footer {
 	position:relative;
 	clear:both;
-	padding:25px 0;
+	padding: 25px 0;
 }
 
 
@@ -187,21 +147,66 @@ footer {
 
 .row {
 	overflow:hidden;
+	margin-bottom:20px;
 }
-
 .grid {
 	float:left;
 	display:inline;
 	margin-left:2%;
-	width:48%;
+	width:49%;
 }
-
+.grid1 .grid {
+	width:100%;
+	margin:0;
+}
 .grid3 .grid {
 	width:32%;
 }
-
 .grid4 .grid {
-	width:23.5%;
+	width: 23.5%;
+}
+
+
+
+
+
+/*
+	
+	Media Queries for Mobile Support
+	
+*/
+
+@media only screen and (max-width:480px) {
+	#container {
+		width:92%;
+	}
+	header,footer,nav {
+		text-align:center;
+	}
+	nav ul li {
+		display:block;
+		margin:0 0 10px;
+	}
+	.grid1 .grid,.grid,.grid3 .grid,.grid4 .grid {
+		float:none;
+		width:100%;
+		margin:0 0 10px;
+		display:block;
+	}
+	.row {
+		margin-bottom:0 !important;
+	}
+}
+@media only screen and (max-width:940px) {
+	header {
+		margin:50px 0;
+	}
+	#container {
+		width:92%;
+	}
+	.row {
+		margin-bottom: 10px;
+	}
 }
 
 
@@ -217,127 +222,6 @@ footer {
 .first {
 	margin-left:0!important;
 }
-
 .last {
 	margin-right:0!important;
-}
-
-.left {
-	float:left;
-	margin-right:1em;
-}
-
-.right {
-	float:right;
-	margin-left:1em;
-}
-
-.center {
-	text-align:center;
-}
-
-
-
-
-
-/*
-	
-	Demo-Specific CSS
-	
-*/
-
-.banner {
-	position:relative;
-}
-
-.tagline p {
-	font-size:28px;
-	line-height:38px;
-	margin:50px 0 0;
-}
-
-.tagline small {
-	font-size: 10px;
-}
-
-
-
-
-
-/*
-	
-	Media Queries for Mobile Support
-	
-*/
-
-@media only screen
-and (max-width : 480px) {
-
-	#container {
-		width:92%;
-		font-size: 80%;
-	}
-	.tagline {
-		font-size:24px;
-		line-height:32px;
-		margin:50px 0 0;
-	}
-	nav ul li {
-		font-size: 100%;
-		display: block;
-	}
-	#full,img {
-		width:100%;
-	}
-
-	#primary,aside {
-		float:none;
-	}
-
-	aside h2 {
-		margin-left:0;
-	}
-
-	.grid {
-		float:none;
-		margin:0!important;
-	}
-
-	.banner h2 {
-		display:none;
-	}
-
-}
-
-@media only screen
-and (max-width : 940px) {
-
-	header {
-		margin: 50px 0;
-	}
-	#container {
-		width:92%;
-	}
-	
-	.tagline {
-		font-size: 20px;
-	}
-	
-	#full,img {
-		width:100%;
-	}
-
-	#primary,aside {
-		float:none;
-	}
-
-	aside h2 {
-		margin-left:0;
-	}
-
-	.banner h2 span {
-		font-size:50%;
-		padding:20px;
-	}
-
 }
